@@ -1,0 +1,58 @@
+{
+  "random_baseline": 0.3379,
+  "top_n": 20,
+  "modes": {
+    "none": {
+      "n_alive": 4096,
+      "median_coherence": 0.381,
+      "mean_coherence": 0.4312,
+      "frac_above_baseline": 0.7256,
+      "frac_tight_0.5": 0.2686
+    },
+    "l2": {
+      "n_alive": 4093,
+      "median_coherence": 0.4112,
+      "mean_coherence": 0.4522,
+      "frac_above_baseline": 0.8287,
+      "frac_tight_0.5": 0.2946
+    }
+  },
+  "density_matched": [
+    {
+      "bin": "0.00-0.35%",
+      "none": 0.3915,
+      "l2": 0.3778,
+      "delta": -0.0136
+    },
+    {
+      "bin": "0.35-0.46%",
+      "none": 0.3559,
+      "l2": 0.3709,
+      "delta": 0.015
+    },
+    {
+      "bin": "0.46-0.57%",
+      "none": 0.3611,
+      "l2": 0.3861,
+      "delta": 0.025
+    },
+    {
+      "bin": "0.57-0.71%",
+      "none": 0.3665,
+      "l2": 0.4023,
+      "delta": 0.0358
+    },
+    {
+      "bin": "0.71-0.98%",
+      "none": 0.3819,
+      "l2": 0.4278,
+      "delta": 0.0458
+    },
+    {
+      "bin": "0.98-25.36%",
+      "none": 0.5248,
+      "l2": 0.5124,
+      "delta": -0.0125
+    }
+  ]
+}

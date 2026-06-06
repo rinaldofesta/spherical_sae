@@ -1,0 +1,36 @@
+{
+  "config": {
+    "n_latents": 4096,
+    "k": 32,
+    "k_aux": 64,
+    "steps": 8000,
+    "batch_size": 2048,
+    "lr": 0.001,
+    "aux_alpha": 0.03125,
+    "loss": "cos",
+    "dead_after_steps": 58,
+    "seed": 0
+  },
+  "results": {
+    "none": {
+      "cos_sim": 0.950598865376418,
+      "mse": 0.12273980367831676,
+      "nmse": 0.18532552615096998,
+      "mean_active": 32.0,
+      "dead_latents": 0,
+      "dead_frac": 0.0,
+      "train_seconds": 54.8,
+      "checkpoint": "data/checkpoints/sae_none_full.pt"
+    },
+    "l2": {
+      "cos_sim": 0.9504660778900775,
+      "mse": 0.8975283568696478,
+      "nmse": 1.3551831597207271,
+      "mean_active": 32.0,
+      "dead_latents": 3,
+      "dead_frac": 0.000732421875,
+      "train_seconds": 95.2,
+      "checkpoint": "data/checkpoints/sae_l2_full.pt"
+    }
+  }
+}

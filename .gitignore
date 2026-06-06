@@ -1,0 +1,24 @@
+# Datasets (downloaded via scripts/build_dataset.py, not versioned)
+data/
+
+# Dataset / model artifacts (anywhere in the tree)
+*.csv
+*.parquet
+*.npy
+*.npz
+*.pt
+*.bin
+*.arrow
+*.h5
+*.pkl
+
+# Generated UI (rebuild with scripts/export_ui.py)
+ui/
+
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# HuggingFace cache (if redirected locally)
+.cache/
