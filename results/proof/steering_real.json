@@ -1,0 +1,284 @@
+{
+  "config": {
+    "embeddings": "/Users/rinaldofesta/Projects/Personal/spherical_sae_repo/data/embeddings.npy",
+    "papers": "/Users/rinaldofesta/Projects/Personal/spherical_sae_repo/data/papers.parquet",
+    "modes": [
+      "none",
+      "l2",
+      "l1"
+    ],
+    "subsample": 40000,
+    "n_latents": 2048,
+    "k": 32,
+    "steps": 4000,
+    "n_concepts": 15,
+    "queries_per_concept": 40,
+    "topk": 10,
+    "strengths": [
+      1.0,
+      3.0,
+      6.0
+    ],
+    "dens_lo": 0.004,
+    "dens_hi": 0.08,
+    "seed": 0,
+    "device": "auto"
+  },
+  "modes": {
+    "none": {
+      "n_concepts_used": 15,
+      "control_concept_precision": 0.0103,
+      "steered_concept_precision": {
+        "1.0": 0.0577,
+        "3.0": 0.7625,
+        "6.0": 0.9913
+      },
+      "control_keyword_precision": 0.0335,
+      "steered_keyword_precision": {
+        "1.0": 0.0582,
+        "3.0": 0.6245,
+        "6.0": 0.8612
+      },
+      "lift_at_max": 0.981,
+      "win_rate_at_max": 1.0,
+      "examples": [
+        {
+          "concept": "federated / communication / improving",
+          "density": 2.25,
+          "query_title": "Open Problem: Tight Online Confidence Intervals for RKHS Elements",
+          "steered_top3": [
+            "Applied Federated Learning: Improving Google Keyboard Query Suggestions",
+            "Blockchain-based Trustworthy Federated Learning Architecture",
+            "FedILC: Weighted Geometric Mean and Invariant Gradient Covariance for Federated "
+          ],
+          "lift": 0.995
+        },
+        {
+          "concept": "federated",
+          "density": 2.49,
+          "query_title": "Exploiting Syntactic Features in a Parsed Tree to Improve End-to-End TTS",
+          "steered_top3": [
+            "Improving Accuracy of Federated Learning in Non-IID Settings",
+            "Dubhe: Towards Data Unbiasedness with Homomorphic Encryption in\n  Federated Lear",
+            "DAdaQuant: Doubly-adaptive quantization for communication-efficient\n  Federated "
+          ],
+          "lift": 0.987
+        },
+        {
+          "concept": "domain / adaptation / unsupervised",
+          "density": 1.06,
+          "query_title": "Mark-Evaluate: Assessing Language Generation using Population Estimation\n  Methods",
+          "steered_top3": [
+            "Unsupervised Data Augmentation with Naive Augmentation and without\n  Unlabeled D",
+            "Shuffle Augmentation of Features from Unlabeled Data for Unsupervised\n  Domain A",
+            "Contrastive Learning for Unsupervised Domain Adaptation of Time Series"
+          ],
+          "lift": 0.995
+        },
+        {
+          "concept": "backdoor / attacks / attack",
+          "density": 0.77,
+          "query_title": "Symmetry Group Equivariant Architectures for Physics",
+          "steered_top3": [
+            "Backdoor Learning Curves: Explaining Backdoor Poisoning Beyond Influence\n  Funct",
+            "Backdoor Learning: A Survey",
+            "Black-box Detection of Backdoor Attacks with Limited Information and\n  Data"
+          ],
+          "lift": 0.993
+        },
+        {
+          "concept": "search / architecture / transfer",
+          "density": 1.91,
+          "query_title": "Greedy Algorithms for Approximating the Diameter of Machine Learning\n  Datasets in Multidi",
+          "steered_top3": [
+            "SpiderNet: Hybrid Differentiable-Evolutionary Architecture Search via\n  Train-Fr",
+            "VINNAS: Variational Inference-based Neural Network Architecture Search",
+            "Probabilistic Neural Architecture Search"
+          ],
+          "lift": 0.985
+        },
+        {
+          "concept": "spiking / backpropagation / snns",
+          "density": 1.0,
+          "query_title": "Tree-structured Attention with Hierarchical Accumulation",
+          "steered_top3": [
+            "Multi-Sample Online Learning for Spiking Neural Networks based on\n  Generalized ",
+            "Hybrid Macro/Micro Level Backpropagation for Training Deep Spiking\n  Neural Netw",
+            "Spiking Approximations of the MaxPooling Operation in Deep SNNs"
+          ],
+          "lift": 0.947
+        }
+      ]
+    },
+    "l2": {
+      "n_concepts_used": 15,
+      "control_concept_precision": 0.016,
+      "steered_concept_precision": {
+        "1.0": 0.0818,
+        "3.0": 0.8085,
+        "6.0": 0.9965
+      },
+      "control_keyword_precision": 0.0423,
+      "steered_keyword_precision": {
+        "1.0": 0.0762,
+        "3.0": 0.6658,
+        "6.0": 0.8843
+      },
+      "lift_at_max": 0.9805,
+      "win_rate_at_max": 1.0,
+      "examples": [
+        {
+          "concept": "federated / adaptive / communication",
+          "density": 1.72,
+          "query_title": "Adversarial Example Games",
+          "steered_top3": [
+            "Privacy Threats Analysis to Secure Federated Learning",
+            "Multi-objective Evolutionary Federated Learning",
+            "Byzantine-Robust Federated Machine Learning through Adaptive Model\n  Averaging"
+          ],
+          "lift": 0.99
+        },
+        {
+          "concept": "federated / client",
+          "density": 2.78,
+          "query_title": "Wasserstein Routed Capsule Networks",
+          "steered_top3": [
+            "DAdaQuant: Doubly-adaptive quantization for communication-efficient\n  Federated ",
+            "FedSAE: A Novel Self-Adaptive Federated Learning Framework in\n  Heterogeneous Sy",
+            "A Unified Analysis of Federated Learning with Arbitrary Client\n  Participation"
+          ],
+          "lift": 0.987
+        },
+        {
+          "concept": "federated / improving",
+          "density": 4.13,
+          "query_title": "Turtle Score -- Similarity Based Developer Analyzer",
+          "steered_top3": [
+            "Overcoming Noisy and Irrelevant Data in Federated Learning",
+            "Accelerating Federated Learning in Heterogeneous Data and Computational\n  Enviro",
+            "Semi-supervised Feature Analysis by Mining Correlations among Multiple\n  Tasks"
+          ],
+          "lift": 0.915
+        },
+        {
+          "concept": "graph / aware / higher",
+          "density": 1.42,
+          "query_title": "FedADMM: A Robust Federated Deep Learning Framework with Adaptivity to\n  System Heterogene",
+          "steered_top3": [
+            "Relational Graph Neural Network Design via Progressive Neural\n  Architecture Sea",
+            "Distance-wise Prototypical Graph Neural Network in Node Imbalance\n  Classificati",
+            "Graph Neural Networks with Feature and Structure Aware Random Walk"
+          ],
+          "lift": 0.985
+        },
+        {
+          "concept": "principal / component / sparse",
+          "density": 2.04,
+          "query_title": "Levels of Analysis for Machine Learning",
+          "steered_top3": [
+            "FAST-PCA: A Fast and Exact Algorithm for Distributed Principal Component\n  Analy",
+            "An Augmented Lagrangian Approach for Sparse Principal Component Analysis",
+            "An $\\ell_p$ theory of PCA and spectral clustering"
+          ],
+          "lift": 0.998
+        },
+        {
+          "concept": "domain / unsupervised / adaptation",
+          "density": 0.6,
+          "query_title": "Online Bin Packing with Predictions",
+          "steered_top3": [
+            "Unsupervised Data Augmentation with Naive Augmentation and without\n  Unlabeled D",
+            "Adversarial Robustness for Unsupervised Domain Adaptation",
+            "ConFUDA: Contrastive Fewshot Unsupervised Domain Adaptation for Medical Image Se"
+          ],
+          "lift": 0.998
+        }
+      ]
+    },
+    "l1": {
+      "n_concepts_used": 15,
+      "control_concept_precision": 0.0182,
+      "steered_concept_precision": {
+        "1.0": 0.0737,
+        "3.0": 0.7815,
+        "6.0": 0.9943
+      },
+      "control_keyword_precision": 0.0315,
+      "steered_keyword_precision": {
+        "1.0": 0.0585,
+        "3.0": 0.633,
+        "6.0": 0.8545
+      },
+      "lift_at_max": 0.9761,
+      "win_rate_at_max": 1.0,
+      "examples": [
+        {
+          "concept": "federated / communication / improving",
+          "density": 2.0,
+          "query_title": "Safe Reinforcement Learning with Stability & Safety Guarantees Using\n  Robust MPC",
+          "steered_top3": [
+            "Blockchain-based Trustworthy Federated Learning Architecture",
+            "Multi-objective Evolutionary Federated Learning",
+            "Applied Federated Learning: Improving Google Keyboard Query Suggestions"
+          ],
+          "lift": 0.99
+        },
+        {
+          "concept": "federated / heterogeneous / communication",
+          "density": 2.56,
+          "query_title": "Optimal Gradient-based Algorithms for Non-concave Bandit Optimization",
+          "steered_top3": [
+            "Federated Composite Optimization",
+            "FLIX: A Simple and Communication-Efficient Alternative to Local Methods\n  in Fed",
+            "FedSAE: A Novel Self-Adaptive Federated Learning Framework in\n  Heterogeneous Sy"
+          ],
+          "lift": 0.987
+        },
+        {
+          "concept": "principal / component / sparse",
+          "density": 2.21,
+          "query_title": "Glitch Classification and Clustering for LIGO with Deep Transfer\n  Learning",
+          "steered_top3": [
+            "Approximation Algorithms for Sparse Principal Component Analysis",
+            "An $\\ell_p$ theory of PCA and spectral clustering",
+            "Schr\\\"{o}dinger PCA: On the Duality between Principal Component Analysis\n  and S"
+          ],
+          "lift": 0.977
+        },
+        {
+          "concept": "graph",
+          "density": 3.54,
+          "query_title": "Fraternal Twins: Unifying Attacks on Machine Learning and Digital\n  Watermarking",
+          "steered_top3": [
+            "GNNExplainer: Generating Explanations for Graph Neural Networks",
+            "Discriminability of Single-Layer Graph Neural Networks",
+            "Architectural Implications of Graph Neural Networks"
+          ],
+          "lift": 0.985
+        },
+        {
+          "concept": "adaptation / unsupervised / domain",
+          "density": 0.82,
+          "query_title": "Explainable k-means. Don't be greedy, plant bigger trees!",
+          "steered_top3": [
+            "Unsupervised Data Augmentation with Naive Augmentation and without\n  Unlabeled D",
+            "Learning Transferable Parameters for Unsupervised Domain Adaptation",
+            "Contrastive Learning for Unsupervised Domain Adaptation of Time Series"
+          ],
+          "lift": 0.998
+        },
+        {
+          "concept": "gradient / stochastic / descent",
+          "density": 2.98,
+          "query_title": "Memory Controlled Sequential Self Attention for Sound Recognition",
+          "steered_top3": [
+            "Dynamic of Stochastic Gradient Descent with State-Dependent Noise",
+            "On Nonconvex Optimization for Machine Learning: Gradients,\n  Stochasticity, and ",
+            "Implicit Regularization of Stochastic Gradient Descent in Natural\n  Language Pro"
+          ],
+          "lift": 0.963
+        }
+      ]
+    }
+  }
+}

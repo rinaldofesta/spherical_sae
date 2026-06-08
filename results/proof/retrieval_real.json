@@ -1,0 +1,29 @@
+{
+  "config": {
+    "embeddings": "/Users/rinaldofesta/Projects/Personal/spherical_sae_repo/data/embeddings.npy",
+    "subsample": 12000,
+    "n_queries": 1000,
+    "n_latents": 2048,
+    "k": 32,
+    "steps": 2500,
+    "seed": 0
+  },
+  "results": {
+    "recon_none": {
+      "recall@10_of_raw": 0.5296999999999995,
+      "rank_corr@100": 0.5614632223658264
+    },
+    "recon_l2": {
+      "recall@10_of_raw": 0.5353000000000004,
+      "rank_corr@100": 0.565492805512622
+    },
+    "recon_l1": {
+      "recall@10_of_raw": 0.5322000000000001,
+      "rank_corr@100": 0.564640863681212
+    },
+    "recon_softmax": {
+      "recall@10_of_raw": 0.5932000000000003,
+      "rank_corr@100": 0.6149729016423225
+    }
+  }
+}
