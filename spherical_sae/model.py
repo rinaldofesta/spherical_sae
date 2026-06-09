@@ -129,6 +129,16 @@ class SphericalSAE(nn.Module):
         h_tilde = normalize_latent(h, self.latent_norm)
         return h_tilde @ self.W_dec.t() + self.b_dec
 
+    def decode_from_shares(self, s: torch.Tensor) -> torch.Tensor:
+        """Decode a code that is ALREADY on its target manifold (no re-normalisation).
+
+        For calibrated intervention we build the latent point explicitly (e.g. exact
+        simplex shares via _calib.set_share) and must decode it verbatim -- applying
+        ``normalize_latent`` again would, for softmax, re-distort the commanded shares.
+        This is the plain affine decoder ``s @ W_dec.T + b_dec``.
+        """
+        return s @ self.W_dec.t() + self.b_dec
+
     def forward(self, x: torch.Tensor):
         h = self.encode(x)
         x_hat = self.decode(h)
