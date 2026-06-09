@@ -1,0 +1,73 @@
+{
+  "tokens": [
+    "federated",
+    "bandits",
+    "attacks",
+    "causal",
+    "robustness",
+    "descent",
+    "speech",
+    "stochastic",
+    "privacy",
+    "gradient",
+    "gaussian",
+    "policy",
+    "adaptation",
+    "quantum",
+    "convergence"
+  ],
+  "doc_freq": {
+    "federated": 685,
+    "bandits": 356,
+    "attacks": 362,
+    "causal": 342,
+    "robustness": 393,
+    "descent": 353,
+    "speech": 499,
+    "stochastic": 806,
+    "privacy": 330,
+    "gradient": 884,
+    "gaussian": 517,
+    "policy": 485,
+    "adaptation": 399,
+    "quantum": 312,
+    "convergence": 308
+  },
+  "coherence": {
+    "federated": 0.541,
+    "bandits": 0.5239,
+    "attacks": 0.5033,
+    "causal": 0.4916,
+    "robustness": 0.4824,
+    "descent": 0.4822,
+    "speech": 0.4743,
+    "stochastic": 0.4632,
+    "privacy": 0.4629,
+    "gradient": 0.4624,
+    "gaussian": 0.4621,
+    "policy": 0.459,
+    "adaptation": 0.4572,
+    "quantum": 0.456,
+    "convergence": 0.4494
+  },
+  "calibration": [
+    "adaptation",
+    "attacks",
+    "bandits",
+    "causal",
+    "convergence",
+    "gaussian",
+    "gradient",
+    "quantum",
+    "speech",
+    "stochastic"
+  ],
+  "holdout": [
+    "descent",
+    "federated",
+    "policy",
+    "privacy",
+    "robustness"
+  ],
+  "note": "frozen BEFORE any calibration result; identical for every arm/seed"
+}

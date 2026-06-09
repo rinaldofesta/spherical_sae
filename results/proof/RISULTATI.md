@@ -13,6 +13,10 @@ Setup base: 64 dimensioni, 256 concetti veri, 8 attivi per campione, 8000 campio
 > Due affermazioni **pareggiano onestamente** (ricostruzione e ricerca: sferico ≈ standard).
 > La **legge di scala** è confermata a piena scala (α ≈ 0,15, nel range del paper). E lo **steering** dimostra
 che i concetti sono causalmente manovrabili (manopola 0→99%, lo sferico il migliore).
+> Il **controllo calibrato** (M2+M3, pre-registrato) dà il null onesto sulla claim differenziale
+> (simplesso ≈ steelman a livello di MACE) ma **prova la manopola proporzionale** per tutti i modi
+> — una mappa sola, transfer cross-concetto ≤ 0,05 — e mostra che lo SAE batte il controllo
+> senza-SAE su **precisione chirurgica e mix multi-concetto** (5/5 semi, `l1` il migliore).
 
 ---
 
@@ -189,7 +193,66 @@ sposta i risultati **a prescindere dal tema di partenza**.
 
 ---
 
-## Conclusione: la mappa, dopo gli esperimenti
+### 🎚️ Controllo CALIBRATO (M2+M3) — "imposta il concetto al p%" funziona?
+
+Il test pre-registrato in `PIANO_CONTROLLO_CALIBRATO.md`: esiste UNA mappa
+`g: p_richiesto → manopola`, stimata sui concetti di **calibrazione** e applicata
+invariata ai concetti **held-out**, che fa tracciare la frazione richiesta? E il
+simplesso (l1/softmax) la possiede in modo che lo standard steelman e il controllo
+**senza-SAE** (interpolazione verso il centroide) non eguagliano?
+
+Harness: `scripts/proof/calibration_real.py` (+ `_calibmap.py`, `_panel.py`),
+**revisionato avversarialmente** (workflow multi-agente, 30 finding → 9 confermati
+→ tutti corretti prima del run). Pannello di 15 concetti keyword **neutro e
+congelato** (`concept_panel.json`, 10 calibrazione / 5 held-out, stratificato per
+densità), assegnazione concetto→latente **iniettiva** (Hungarian su F1), query
+identiche tra i bracci, mappa isotona (PAV) **simmetrica per tutti**. 5 semi, CI 95%.
+
+| braccio | MACE held-out | transfer | pendenza | R² | mono | leak resid | mix 2-conc |
+|---|---|---|---|---|---|---|---|
+| `none` (steelman) | 0,107 ± 0,024 | 0,036 | 1,07 | 0,99 | 0,00 | 0,64 | 0,348 |
+| `l2` | 0,115 ± 0,038 | 0,051 | 1,09 | 0,99 | 0,00 | 0,73 | — |
+| **`l1`** | 0,096 ± 0,013 | 0,037 | 1,09 | 0,99 | 0,00 | **0,53** | **0,293** |
+| `softmax` | **0,093 ± 0,024** | **0,018** | 0,93 | 0,99 | 0,00 | 0,62 | — |
+| `interp` (senza SAE) | 0,131 ± 0,017 | 0,046 | 1,16 | 0,99 | 0,00 | 0,81 | 0,367 |
+
+**Verdetto pre-registrato: NO-GO sulla claim differenziale.** I criteri §8 falliscono
+dove contano: il simplesso NON batte lo steelman `none` con CI separati (0,093±0,024
+vs 0,107±0,024 — pareggio; condizione di disproof (a) del piano), e il MACE migliore
+sfora di poco la soglia CI-aware (0,093+0,024 > 0,10). La scommessa strategica
+*"il simplesso è calibrabile in modo unico"* è **ritirata**, come il piano prevedeva.
+
+**Ma il null onesto NON è quello atteso.** Il pilota M0 temeva l'*interruttore
+binario*; è il contrario: **la manopola proporzionale esiste ed è un risultato vero**
+— per *tutti* i modi. Una sola mappa isotona, stimata su 10 concetti, trasferisce ai
+concetti mai visti con MACE ~0,09–0,13, pendenza ≈1, R² 0,99, zero violazioni di
+monotonicità, Spearman 1,0, transfer ≤ 0,05. Il sigmoide saturante diventa un
+quadrante lineare una volta invertito — e la mappa è **condivisa tra concetti**,
+quindi il controllo è zero-shot sul concetto nuovo.
+
+**Dove lo SAE batte davvero il controllo senza-SAE** (confronto appaiato per seme,
+5/5 semi, secondario rispetto ai criteri registrati):
+- **Precisione chirurgica**: leak off-target (post-sottrazione geometrica) l1 0,53
+  vs interp 0,81 — l'interpolazione trascina TUTTO l'embedding verso il centroide,
+  lo SAE muove (più) solo l'asse comandato. l1 vince 5/5 semi (+0,28 medio).
+- **Mix multi-concetto** `{A:0,30, B:0,15}`: errore L1 l1 0,293 vs interp 0,367,
+  5/5 semi — il budget unitario condiviso del simplesso aiuta dove il piano lo
+  prevedeva (la capacità "genuinamente nuova" di §6).
+
+**Note oneste:**
+- Il leak alto in assoluto è in parte **co-occorrenza di keyword, non entanglement**:
+  `descent` (held-out) condivide i documenti con `gradient` (Jaccard 0,26) e
+  `stochastic` (0,13) del pannello di calibrazione; comandare "descent" recupera
+  *legittimamente* paper di gradient descent. Il trigger NO-GO `leak > 0,3` scatta
+  su questo upper bound contaminato; il test pulito resta la catena M6 (sintetico).
+- Il gate `Jaccard ≥ 0,6` tra membership kw e SAE non passa mai (max F1 ~0,5 a
+  2048 latenti): MACE_sae **non riportabile** — onestà sul fatto che i latenti non
+  coincidono coi keyword, li *approssimano*.
+- Le mappe oracle per-concetto azzerano l'errore (MACE 0,004–0,011 per tutti):
+  il vincolo non è la manopola ma la **condivisione della mappa** — ed è lì che
+  tutti i bracci pareggiano.
+
+
 
 | Passo | Esito |
 |---|---|
@@ -201,6 +264,7 @@ sposta i risultati **a prescindere dal tema di partenza**.
 | 🚗 Ricerca (sintetica **e reale**) | ⚖️ premessa ok (preserva la ricerca), ma sferico ≈ standard |
 | 📈 Legge di scala | ✅ **PROVA** — legge di potenza pulita, α ≈ 0,15 (nel range del paper), sferico ≈ standard |
 | 🎛️ Pilotaggio (steering) | ✅ **PROVA causale** — manopola 0→99% (win-rate 100%), sferico il migliore |
+| 🎚️ Controllo calibrato (M2+M3) | ⚖️ **NO-GO pre-registrato** sulla claim differenziale (simplesso ≈ steelman), ma **manopola proporzionale provata** per tutti i modi (transfer ≤ 0,05); SAE > senza-SAE su leak e mix (5/5 semi); `l1` il più chirurgico |
 
 **In sintesi:** la variante sferica passa da "demo promettente" a **risultato dimostrato** su ciò che
 conta di più — il *disentanglement* (ritrova meglio i concetti veri, in modo statisticamente solido) —
@@ -226,4 +290,7 @@ python scripts/proof/retrieval_real.py         # 🚗 (reale, serve il dataset)
 python scripts/proof/run_scaling_real.py       # 📈 (reale ridotto, serve il dataset)
 python scripts/proof/run_scaling_real_full.py  # 📈 PIENA SCALA (reale, MPS, ripresa automatica)
 python scripts/proof/steering_real.py          # 🎛️ pilotaggio/steering (reale)
+python scripts/proof/pilot_calibration.py      # 🎚️ M0: pilota dose-risposta
+python scripts/proof/calibration_real.py       # 🎚️ M2+M3: controllo calibrato, 5 semi + verdetto
+python -m pytest scripts/proof/ -q             # unit test (operatori, mappe, pannello)
 ```

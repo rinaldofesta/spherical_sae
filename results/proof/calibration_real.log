@@ -1,0 +1,89 @@
+== Calibrated control (M2+M3) ==  device=mps  N=40000  arms=['none', 'l2', 'l1', 'softmax', 'interp']  seeds=[0, 1, 2, 3, 4]
+
+panel: built and FROZEN -> concept_panel.json  calib=['adaptation', 'attacks', 'bandits', 'causal', 'convergence', 'gaussian', 'gradient', 'quantum', 'speech', 'stochastic']  holdout=['descent', 'federated', 'policy', 'privacy', 'robustness']
+[seed 0][none] trained; latent match F1={'federated': 0.617, 'bandits': 0.462, 'attacks': 0.23, 'causal': 0.526, 'robustness': 0.246, 'descent': 0.155, 'speech': 0.548, 'stochastic': 0.389, 'privacy': 0.23, 'gradient': 0.382, 'gaussian': 0.369, 'policy': 0.314, 'adaptation': 0.339, 'quantum': 0.498, 'convergence': 0.2}; dropped=[]  (6s)
+[seed 0][l2] trained; latent match F1={'federated': 0.619, 'bandits': 0.472, 'attacks': 0.22, 'causal': 0.488, 'robustness': 0.193, 'descent': 0.171, 'speech': 0.474, 'stochastic': 0.395, 'privacy': 0.233, 'gradient': 0.391, 'gaussian': 0.364, 'policy': 0.333, 'adaptation': 0.288, 'quantum': 0.533, 'convergence': 0.196}; dropped=[]  (12s)
+[seed 0][l1] trained; latent match F1={'federated': 0.661, 'bandits': 0.466, 'attacks': 0.287, 'causal': 0.462, 'robustness': 0.265, 'speech': 0.497, 'stochastic': 0.411, 'privacy': 0.227, 'gradient': 0.392, 'gaussian': 0.372, 'policy': 0.296, 'adaptation': 0.351, 'quantum': 0.544, 'convergence': 0.199}; dropped=['descent']  (19s)
+[seed 0][softmax] trained; latent match F1={'federated': 0.618, 'bandits': 0.487, 'attacks': 0.267, 'causal': 0.462, 'robustness': 0.282, 'descent': 0.188, 'speech': 0.408, 'stochastic': 0.381, 'privacy': 0.345, 'gradient': 0.358, 'gaussian': 0.305, 'policy': 0.279, 'adaptation': 0.335, 'quantum': 0.523, 'convergence': 0.203}; dropped=[]  (25s)
+[seed 0] usable: 10 calib / 4 holdout
+[seed 0][none] MACE hold=0.109 fit=0.064 slope=1.09 R2=0.99 leak=0.2114 mix=0.3396  (26s)
+[seed 0][l2] MACE hold=0.134 fit=0.068 slope=0.99 R2=0.99 leak=0.3248 mix=None  (26s)
+[seed 0][l1] MACE hold=0.099 fit=0.063 slope=1.12 R2=0.99 leak=0.2507 mix=0.2878  (27s)
+[seed 0][softmax] MACE hold=0.103 fit=0.077 slope=1.23 R2=0.99 leak=0.207 mix=None  (28s)
+[seed 0][interp] MACE hold=0.154 fit=0.087 slope=1.12 R2=0.99 leak=0.477 mix=0.3593  (28s)
+[seed 1][none] trained; latent match F1={'federated': 0.586, 'bandits': 0.469, 'attacks': 0.213, 'causal': 0.47, 'robustness': 0.239, 'descent': 0.222, 'speech': 0.446, 'stochastic': 0.388, 'privacy': 0.282, 'gradient': 0.347, 'gaussian': 0.411, 'policy': 0.322, 'adaptation': 0.277, 'quantum': 0.528, 'convergence': 0.177}; dropped=[]  (34s)
+[seed 1][l2] trained; latent match F1={'federated': 0.642, 'bandits': 0.447, 'attacks': 0.2, 'causal': 0.442, 'robustness': 0.211, 'descent': 0.19, 'speech': 0.344, 'stochastic': 0.401, 'privacy': 0.252, 'gradient': 0.401, 'gaussian': 0.431, 'policy': 0.303, 'adaptation': 0.275, 'quantum': 0.539, 'convergence': 0.22}; dropped=[]  (40s)
+[seed 1][l1] trained; latent match F1={'federated': 0.66, 'bandits': 0.42, 'attacks': 0.209, 'causal': 0.435, 'robustness': 0.23, 'descent': 0.161, 'speech': 0.346, 'stochastic': 0.443, 'privacy': 0.266, 'gradient': 0.357, 'gaussian': 0.372, 'policy': 0.301, 'adaptation': 0.27, 'quantum': 0.474, 'convergence': 0.199}; dropped=[]  (46s)
+[seed 1][softmax] trained; latent match F1={'federated': 0.661, 'bandits': 0.531, 'attacks': 0.255, 'causal': 0.422, 'robustness': 0.21, 'descent': 0.205, 'speech': 0.523, 'stochastic': 0.384, 'privacy': 0.336, 'gradient': 0.342, 'gaussian': 0.279, 'policy': 0.432, 'adaptation': 0.35, 'quantum': 0.57, 'convergence': 0.217}; dropped=[]  (52s)
+[seed 1] usable: 10 calib / 5 holdout
+[seed 1][none] MACE hold=0.081 fit=0.060 slope=0.98 R2=0.99 leak=0.786 mix=0.3589  (53s)
+[seed 1][l2] MACE hold=0.081 fit=0.058 slope=1.15 R2=0.99 leak=0.7262 mix=None  (54s)
+[seed 1][l1] MACE hold=0.108 fit=0.047 slope=1.02 R2=0.99 leak=0.7319 mix=0.3121  (55s)
+[seed 1][softmax] MACE hold=0.114 fit=0.076 slope=1.16 R2=0.99 leak=0.8462 mix=None  (55s)
+[seed 1][interp] MACE hold=0.130 fit=0.081 slope=1.09 R2=0.99 leak=1.1589 mix=0.3718  (56s)
+[seed 2][none] trained; latent match F1={'federated': 0.682, 'bandits': 0.419, 'attacks': 0.214, 'causal': 0.404, 'robustness': 0.221, 'descent': 0.179, 'speech': 0.399, 'stochastic': 0.401, 'privacy': 0.244, 'gradient': 0.401, 'gaussian': 0.344, 'policy': 0.287, 'adaptation': 0.393, 'quantum': 0.478, 'convergence': 0.207}; dropped=[]  (61s)
+[seed 2][l2] trained; latent match F1={'federated': 0.641, 'bandits': 0.443, 'attacks': 0.196, 'causal': 0.419, 'robustness': 0.25, 'descent': 0.165, 'speech': 0.475, 'stochastic': 0.409, 'privacy': 0.253, 'gradient': 0.382, 'gaussian': 0.412, 'policy': 0.307, 'adaptation': 0.338, 'quantum': 0.464, 'convergence': 0.199}; dropped=[]  (68s)
+[seed 2][l1] trained; latent match F1={'federated': 0.637, 'bandits': 0.441, 'attacks': 0.201, 'causal': 0.438, 'robustness': 0.262, 'descent': 0.181, 'speech': 0.465, 'stochastic': 0.394, 'privacy': 0.305, 'gradient': 0.396, 'gaussian': 0.392, 'policy': 0.288, 'adaptation': 0.273, 'quantum': 0.506, 'convergence': 0.191}; dropped=[]  (74s)
+[seed 2][softmax] trained; latent match F1={'federated': 0.64, 'bandits': 0.51, 'attacks': 0.282, 'causal': 0.473, 'robustness': 0.314, 'descent': 0.238, 'speech': 0.442, 'stochastic': 0.35, 'privacy': 0.365, 'gradient': 0.342, 'gaussian': 0.39, 'policy': 0.411, 'adaptation': 0.325, 'quantum': 0.484, 'convergence': 0.188}; dropped=[]  (80s)
+[seed 2] usable: 10 calib / 5 holdout
+[seed 2][none] MACE hold=0.117 fit=0.058 slope=1.00 R2=0.99 leak=0.788 mix=0.355  (81s)
+[seed 2][l2] MACE hold=0.105 fit=0.060 slope=1.13 R2=0.99 leak=0.7559 mix=None  (82s)
+[seed 2][l1] MACE hold=0.080 fit=0.055 slope=1.04 R2=0.99 leak=0.7443 mix=0.279  (82s)
+[seed 2][softmax] MACE hold=0.070 fit=0.078 slope=0.71 R2=0.99 leak=0.9932 mix=None  (83s)
+[seed 2][interp] MACE hold=0.131 fit=0.089 slope=1.13 R2=0.99 leak=1.054 mix=0.3739  (84s)
+[seed 3][none] trained; latent match F1={'federated': 0.657, 'bandits': 0.447, 'attacks': 0.207, 'causal': 0.456, 'robustness': 0.208, 'speech': 0.383, 'stochastic': 0.388, 'privacy': 0.207, 'gradient': 0.367, 'gaussian': 0.404, 'policy': 0.295, 'adaptation': 0.318, 'quantum': 0.502, 'convergence': 0.184}; dropped=['descent']  (89s)
+[seed 3][l2] trained; latent match F1={'federated': 0.669, 'bandits': 0.436, 'attacks': 0.221, 'causal': 0.481, 'robustness': 0.24, 'descent': 0.158, 'speech': 0.403, 'stochastic': 0.404, 'privacy': 0.287, 'gradient': 0.384, 'gaussian': 0.372, 'policy': 0.329, 'adaptation': 0.296, 'quantum': 0.52, 'convergence': 0.227}; dropped=[]  (96s)
+[seed 3][l1] trained; latent match F1={'federated': 0.661, 'bandits': 0.484, 'attacks': 0.226, 'causal': 0.412, 'robustness': 0.226, 'descent': 0.173, 'speech': 0.354, 'stochastic': 0.392, 'privacy': 0.258, 'gradient': 0.386, 'gaussian': 0.362, 'policy': 0.31, 'adaptation': 0.343, 'quantum': 0.508, 'convergence': 0.21}; dropped=[]  (102s)
+[seed 3][softmax] trained; latent match F1={'federated': 0.654, 'bandits': 0.492, 'attacks': 0.268, 'causal': 0.409, 'robustness': 0.208, 'descent': 0.166, 'speech': 0.379, 'stochastic': 0.374, 'privacy': 0.384, 'gradient': 0.376, 'gaussian': 0.342, 'policy': 0.341, 'adaptation': 0.498, 'quantum': 0.56, 'convergence': 0.2}; dropped=[]  (108s)
+[seed 3] usable: 10 calib / 4 holdout
+[seed 3][none] MACE hold=0.131 fit=0.076 slope=0.96 R2=0.99 leak=0.7828 mix=0.3424  (109s)
+[seed 3][l2] MACE hold=0.097 fit=0.066 slope=1.25 R2=1.00 leak=0.2043 mix=None  (109s)
+[seed 3][l1] MACE hold=0.101 fit=0.069 slope=1.20 R2=1.00 leak=0.2472 mix=0.2629  (110s)
+[seed 3][softmax] MACE hold=0.076 fit=0.076 slope=0.73 R2=0.99 leak=0.2389 mix=None  (111s)
+[seed 3][interp] MACE hold=0.120 fit=0.079 slope=1.35 R2=0.99 leak=0.4025 mix=0.3594  (111s)
+[seed 4][none] trained; latent match F1={'federated': 0.665, 'bandits': 0.5, 'attacks': 0.28, 'causal': 0.516, 'robustness': 0.232, 'descent': 0.167, 'speech': 0.27, 'stochastic': 0.419, 'privacy': 0.213, 'gradient': 0.371, 'gaussian': 0.391, 'policy': 0.299, 'adaptation': 0.324, 'quantum': 0.426, 'convergence': 0.166}; dropped=[]  (117s)
+[seed 4][l2] trained; latent match F1={'federated': 0.674, 'bandits': 0.49, 'attacks': 0.201, 'causal': 0.475, 'robustness': 0.214, 'descent': 0.189, 'speech': 0.398, 'stochastic': 0.43, 'privacy': 0.185, 'gradient': 0.397, 'gaussian': 0.406, 'policy': 0.297, 'adaptation': 0.388, 'quantum': 0.393, 'convergence': 0.179}; dropped=[]  (123s)
+[seed 4][l1] trained; latent match F1={'federated': 0.67, 'bandits': 0.468, 'attacks': 0.265, 'causal': 0.387, 'robustness': 0.253, 'descent': 0.165, 'speech': 0.253, 'stochastic': 0.387, 'privacy': 0.198, 'gradient': 0.408, 'gaussian': 0.391, 'policy': 0.307, 'adaptation': 0.376, 'quantum': 0.48, 'convergence': 0.216}; dropped=[]  (130s)
+[seed 4][softmax] trained; latent match F1={'federated': 0.687, 'bandits': 0.494, 'attacks': 0.326, 'causal': 0.47, 'robustness': 0.198, 'descent': 0.263, 'speech': 0.48, 'stochastic': 0.374, 'privacy': 0.363, 'gradient': 0.373, 'gaussian': 0.435, 'policy': 0.338, 'adaptation': 0.438, 'quantum': 0.428, 'convergence': 0.204}; dropped=[]  (136s)
+[seed 4] usable: 10 calib / 5 holdout
+[seed 4][none] MACE hold=0.096 fit=0.096 slope=1.32 R2=1.00 leak=0.6501 mix=0.3422  (137s)
+[seed 4][l2] MACE hold=0.158 fit=0.067 slope=0.95 R2=0.98 leak=1.631 mix=None  (138s)
+[seed 4][l1] MACE hold=0.094 fit=0.061 slope=1.07 R2=0.99 leak=0.6508 mix=0.3254  (139s)
+[seed 4][softmax] MACE hold=0.104 fit=0.068 slope=0.81 R2=0.99 leak=0.8333 mix=None  (140s)
+[seed 4][interp] MACE hold=0.119 fit=0.087 slope=1.11 R2=0.99 leak=0.9333 mix=0.3718  (141s)
+
+====================================================================================================
+     arm |    MACE hold |  MACE fit |  transfer |  oracle |       slope |    R2 |  mono |    mix
+----------------------------------------------------------------------------------------------------
+    none | 0.107±0.024 |     0.071 |     0.036 |   0.007 | 1.07±0.53 |  0.99 |  0.00 |  0.348
+      l2 | 0.115±0.038 |     0.064 |     0.051 |   0.008 | 1.09±0.55 |  0.99 |  0.00 |     --
+      l1 | 0.096±0.013 |     0.059 |     0.037 |   0.004 | 1.09±0.53 |  0.99 |  0.00 |  0.293
+ softmax | 0.093±0.024 |     0.075 |     0.018 |   0.004 | 0.93±0.37 |  0.99 |  0.00 |     --
+  interp | 0.131±0.017 |     0.085 |     0.046 |   0.011 | 1.16±0.66 |  0.99 |  0.00 |  0.367
+----------------------------------------------------------------------------------------------------
+    none | rho=1.000  leak=0.795  leak-resid=0.644  jacc-gate=0.000
+      l2 | rho=1.000  leak=0.878  leak-resid=0.728  jacc-gate=0.000
+      l1 | rho=1.000  leak=0.680  leak-resid=0.525  jacc-gate=0.000
+ softmax | rho=1.000  leak=0.787  leak-resid=0.624  jacc-gate=0.000
+  interp | rho=1.000  leak=0.979  leak-resid=0.805
+====================================================================================================
+  best_simplex: softmax
+  C1_simplex_mace_ci<=0.10: False
+  C2_beats_none_steelman_no_CI_overlap: False
+  C2b_beats_none_perconcept_tuned_no_CI_overlap: False
+  C3_slope_in_[0.8,1.2]: True
+  C3_r2>=0.85: True
+  C3_spearman>=0.85: True
+  C3_mono_viol<=0.05: True
+  C4_transfer<=0.05: True
+  C4b_slope_spread_strictly_smallest: True
+  C5_beats_interp_no_CI_overlap: False
+  C6_retrieval_guardrail: True
+  C7_leak_residual<=0.3: False
+  GO: False
+  SOFT_GO: False
+  NO_GO_mace>0.15: False
+  NO_GO_leak_residual>0.3: True
+  NO_GO_binary_switch_all_arms: False
+
+saved -> /Users/rinaldofesta/Projects/Personal/spherical_sae_repo/results/proof/calibration_real.json
